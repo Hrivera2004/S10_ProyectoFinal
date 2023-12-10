@@ -172,11 +172,6 @@ public Connect4(){
         int cont=0;
         for (int i = 0; i < pos.size(); i++) {
             int win = pos.get(i);
-            if (win==6||win==2) {
-                cont++;
-            }
-            System.out.println(win+"////");
-            
             boolean proximity=true;
             if (win==1) {
                 for (int j = 0; j < 4 &&  proximity==true; j++) {
@@ -248,11 +243,10 @@ public Connect4(){
         int diaP= diaP1+diaP2 ;
         int diaN = diaN1+diaN2;
         int rectH= rectH1+rectH2;
-        if (cont==2) {
-            rectH--;
-        }
+        System.out.println(rectH1+" "+rectH2);
+
          
-        if (diaN<4&&diaP<4&&rectH<4) {
+        if (diaN<4&&diaP<4&&rectH<5) {
             int[] rem = {4-diaN,4-diaP,4-rectH};
             int menor=4;
             int posM=0; 
@@ -285,7 +279,7 @@ public Connect4(){
                             diaP++;
                         }
                     }    
-                }else if (diaP2==0&&x>3 && mat.length-1-y>=3){
+                }else if (diaP2==0&&x>=menor && mat.length-1-y>=menor){
                     for (int i = 0; i < menor; i++) {
                         if (mat[y][x]==mat[y+i][x-i]) {
                             diaP++;
@@ -295,13 +289,13 @@ public Connect4(){
             }else if(posM==2 && y!=0) {
                 if (rectH1==0&mat.length-x>=menor) {
                     for (int i = 0; i < menor; i++) {
-                        if (mat[y][x]==mat[y][x-i]) {
+                        if (mat[y][x]==mat[y][x+i]) {
                             rectH++;
                         }
                     }    
                 }else if (rectH2==0&&x>=menor){
                     for (int i = 0; i < menor; i++) {
-                        if (mat[y][x]==mat[y][x+i]) {
+                        if (mat[y][x]==mat[y][x-i]) {
                             rectH++;
                         }
                     }
@@ -330,7 +324,7 @@ public Connect4(){
         if (mat.length-x>=3) {//recta horizontal positiva
             pos.add(2);
             System.out.println("2+");
-        }
+        } 
         if (mat.length-x>=3 && mat.length-1-y>=3) {//diagonal inversa negativa 
             pos.add(3);
             System.out.println("3+");
