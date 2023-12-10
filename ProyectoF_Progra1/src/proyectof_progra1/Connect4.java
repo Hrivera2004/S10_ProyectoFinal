@@ -4,12 +4,12 @@ package proyectof_progra1;
     import javax.swing.JOptionPane;
 public class Connect4 {
     Random rd = new Random();
-    static Scanner sc = new Scanner(System.in);
+    
     boolean campeon=false;
     int turn;
     int x;
     int y;
-    int[][] tab;
+    int[][] tab = new int[6][7];
 public Connect4(){
     }
     public Connect4(int[][] tab,int x, int y,int turn) {
@@ -48,17 +48,16 @@ public Connect4(){
         this.turn = turn;
     }
 
-    
     public void c4(){
         options();
     }
     
     public void options(){
-        String[] choose = {"2 Players","AI"};
-        int option=JOptionPane.showOptionDialog(null, "Eliga la modalidad de juego"
-                ,"Connect4", 0, 3, null, choose, choose[0]);
+        //utilizar get y set para jalar codigo de option
+        GUI_Proyecto visual = new GUI_Proyecto();
+        visual.setVisible(true);
         turn=0;
-        while(turn<42 && campeon==false){ 
+        /*while(turn<42 && campeon==false){ 
             turn++;
             play(option);
             System.out.println("------------------------");
@@ -73,7 +72,7 @@ public Connect4(){
             }else{
                 System.out.println("AI gano");
             }
-        }
+        }*/
     }
     
     public void play(int option){
@@ -109,8 +108,9 @@ public Connect4(){
         }
     }    
     public void jugador1(){
-        System.out.println("Ingrese columna(0-6): ");
-        int columna = sc.nextInt();
+        String[] opc = {"1","2","3","4","5","6","7"};
+        int columna = JOptionPane.showOptionDialog(null, "Ingrese su movimiento Jugador 1: "
+                , "Connect4", 0, 3, null, opc, opc[0]);
         boolean found=false;
         while(found==false){
             for (int i = 5; i > 0 && found==false; i--) {
@@ -123,15 +123,16 @@ public Connect4(){
                 }
             }
             if (found==false) {
-                System.out.println("No se encontro el espacio que desea ingrese ptra columna");
-                columna = sc.nextInt();
+                columna = JOptionPane.showOptionDialog(null, "Movimiento Invalido Ingrese denuevo: "
+                , "Connect4", 0, 3, null, opc, opc[0]);
             }
         }
         
     }
     public void jugador2(){
-        System.out.println("Ingrese columna(0-6): ");
-        int columna = sc.nextInt();
+        String[] opc = {"1","2","3","4","5","6","7"};
+        int columna = JOptionPane.showOptionDialog(null, "Ingrese su movimiento Jugador 2: "
+                , "Connect4", 0, 3, null, opc, opc[0]);
         boolean found=false;
         while(found==false){
             for (int i = 5; i >= 0 && found==false; i--) {
@@ -143,8 +144,8 @@ public Connect4(){
                 }
             }
             if (found==false) {
-                System.out.println("No se encontro el espacio que desea ingrese ptra columna");
-                x = sc.nextInt();
+                columna = JOptionPane.showOptionDialog(null, "Movimiento Invalido Ingrese denuevo: "
+                , "Connect4", 0, 3, null, opc, opc[0]);
             }
         }
     }
@@ -387,4 +388,6 @@ public Connect4(){
             System.out.println("");
         }
     }
+    
+    
 }
