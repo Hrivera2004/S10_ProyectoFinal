@@ -10,7 +10,8 @@ package proyectof_progra1;
  */
 public class GUI_Proyecto extends javax.swing.JFrame {
     Connect4 game = new Connect4();
-
+    GamePlay display = new GamePlay();
+    
     public GUI_Proyecto() {
         initComponents();
     }
@@ -26,44 +27,64 @@ public class GUI_Proyecto extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
+        setPreferredSize(new java.awt.Dimension(500, 450));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(255, 204, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("1 Jugador");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(54, 149, 162, 132);
 
-        jButton2.setText("jButton2");
+        jButton2.setBackground(new java.awt.Color(204, 0, 0));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("2 Jugadores");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(293, 149, 155, 132);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(211, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(176, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 60)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CONNECT 4");
+        jLabel1.setToolTipText("");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(50, 30, 394, 65);
+
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setText("Exit");
+        jButton3.setActionCommand("E");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(54, 299, 394, 27);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectof_progra1/Images/C4_.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(80, -50, 350, 380);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -72,6 +93,7 @@ public class GUI_Proyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         int option = 1;
+        display.setVisible(true);
         while(game.turn<42 && game.campeon==false){ 
             game.turn++;
             game.play(option);
@@ -94,6 +116,7 @@ public class GUI_Proyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         int option = 0;
+        display.setVisible(true);
         while(game.turn<42 && game.campeon==false){ 
             game.turn++;
             game.play(option);
@@ -111,6 +134,10 @@ public class GUI_Proyecto extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        dispose();
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -150,5 +177,8 @@ public class GUI_Proyecto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -76,6 +76,7 @@ public Connect4(){
     }
     
     public void play(int option){
+
         if (option==0) {
             if (turn%2!=0) {
                 System.out.println("Turno jugador 1");
@@ -243,7 +244,6 @@ public Connect4(){
         int diaP= diaP1+diaP2 ;
         int diaN = diaN1+diaN2;
         int rectH= rectH1+rectH2;
-        System.out.println(rectH1+" "+rectH2);
 
          
         if (diaN<4&&diaP<4&&rectH<5) {
@@ -302,11 +302,6 @@ public Connect4(){
                 }
             }
         }
-         System.out.println("--------Verificacion-------");
-         System.out.println(diaN);
-         System.out.println(diaP);
-         System.out.println(rectH);
-         System.out.println(rectV);
          
         if (diaN>=4||diaP>=4||rectH>=4||rectV>=4) {
             return true;
@@ -319,31 +314,24 @@ public Connect4(){
         ArrayList<Integer> pos = new ArrayList<Integer>();
         if (mat.length-x>=3 && y>=3) {//diagonal positiva
             pos.add(1);
-            System.out.println("1+");
         }
         if (mat.length-x>=3) {//recta horizontal positiva
             pos.add(2);
-            System.out.println("2+");
         } 
         if (mat.length-x>=3 && mat.length-1-y>=3) {//diagonal inversa negativa 
             pos.add(3);
-            System.out.println("3+");
         }
         if (mat.length-1-y>=3) {//recta vertical 
             pos.add(4);
-            System.out.println("4+");
         }
         if (x>=3 && mat.length-1-y>=3) {//diagonal Abajo negativa 
             pos.add(5);
-            System.out.println("5+");
         }
         if (x>=3) {//recta horizontal negativa 
             pos.add(6);
-            System.out.println("6+");
         }
         if (x>=3 && y>=3) {//diagonal Arriba negativa
             pos.add(7);
-            System.out.println("7+");
         }
         return pos;
     }//hector
