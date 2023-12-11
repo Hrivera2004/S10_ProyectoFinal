@@ -17,12 +17,119 @@ public class GamePlay extends javax.swing.JFrame {
         int x=game.x;
         int y=game.y;
         
-        if (y==0){
+        if (y==5){
             if (x==0) {
                 if(game.turn%2!=0){
+                    //XY.
                 }else{
-                    
+                    //XY.
                 }
+                XY.setText("O");
+            }else if(x==1){
+                
+            }else if(x==2){
+                
+            }else if(x==3){
+                
+            }else if(x==4){
+                
+            }else if(x==5){
+                
+            }else if(x==6){
+                
+            }
+        }else if (y==4){
+            if (x==0) {
+                if(game.turn%2!=0){
+                    //XY7.
+                }else{
+                    //XY7.
+                }
+                XY7.setText("O");
+            }else if(x==1){
+                
+            }else if(x==2){
+                
+            }else if(x==3){
+                
+            }else if(x==4){
+                
+            }else if(x==5){
+                
+            }else if(x==6){
+                
+            }
+        }else if (y==3){
+            if (x==0) {
+                if(game.turn%2!=0){
+                    //XY14.
+                }else{
+                    //XY14.
+                }
+                XY14.setText("O");
+            }else if(x==1){
+                
+            }else if(x==2){
+                
+            }else if(x==3){
+                
+            }else if(x==4){
+                
+            }else if(x==5){
+                
+            }else if(x==6){
+                
+            }
+        }else if (y==2){
+            if (x==0) {
+                if(game.turn%2!=0){
+                    //XY21.
+                }else{
+                    //XY21.
+                }
+                XY21.setText("O");
+            }else if(x==1){
+                
+            }else if(x==2){
+                
+            }else if(x==3){
+                
+            }else if(x==4){
+                
+            }else if(x==5){
+                
+            }else if(x==6){
+                
+            }
+        }else if (y==1){
+            if (x==0) {
+                if(game.turn%2!=0){
+                    //XY28.
+                }else{
+                    //XY28.
+                }
+                XY28.setText("O");
+            }else if(x==1){
+                
+            }else if(x==2){
+                
+            }else if(x==3){
+                
+            }else if(x==4){
+                
+            }else if(x==5){
+                
+            }else if(x==6){
+                
+            }
+        }else if (y==1){
+            if (x==0) {
+                if(game.turn%2!=0){
+                    //XY35.
+                }else{
+                    //XY35.
+                }
+                XY35.setText("O");
             }else if(x==1){
                 
             }else if(x==2){
