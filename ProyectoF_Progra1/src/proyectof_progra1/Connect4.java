@@ -9,17 +9,11 @@ public class Connect4 {
     int turn;
     int x;
     int y;
-    int[][] tab = new int[6][7];
-public Connect4(){
-    }
-    public Connect4(int[][] tab,int x, int y,int turn) {
-        this.tab = tab;
-        this.x = x;
-        this.y = y;
-        this.turn = turn;
-    }
-    public Connect4(int[][] tab) {
-        this.tab = tab;
+    int[][] tab;
+    
+    public Connect4(){
+        this.tab= new int[6][7];
+        turn = 0;
     }
     
     public int[][] getTab() {
@@ -61,26 +55,26 @@ public Connect4(){
     
     public void play(int option){
 
-        if (option==0) {
+        if (option==1) {
             if (turn%2!=0) {
                 System.out.println("Turno jugador 1");
                 jugador1();
-                print(tab);
+                print(tab,0,0);
             }else{
                 System.out.println("Turno jugador 2");
                 jugador2();
-                print(tab);
+                print(tab,0,0);
             }
-        }else if((option==1)){
+        }else if((option==0)){
             if (turn%2!=0) {
                 System.out.println("Turno jugador 1");
                 jugador1();
-                print(tab);
+                print(tab,0,0);
                 System.out.println("-----------------");
             }else{
                 System.out.println("Turno AI");
                 AI();
-                print(tab);
+                print(tab,0,0);
                 System.out.println("-----------------");
             }
         }
@@ -96,13 +90,16 @@ public Connect4(){
         String[] opc = {"1","2","3","4","5","6","7"};
         int columna = JOptionPane.showOptionDialog(null, "Ingrese su movimiento Jugador 1: "
                 , "Connect4", 0, 3, null, opc, opc[0]);
+        
         boolean found=false;
         while(found==false){
-            for (int i = 5; i > 0 && found==false; i--) {
+            for (int i = 5; i >= 0 && found==false; i--) {
                 if (tab[i][columna]==0) {
                     found=true;
-                    y=i;
-                    x=columna;
+                    setY(i);
+                    setX(columna); 
+                    //y=i;
+                    //x=columna;
                     tab[y][x]=1;
                     
                 }
@@ -123,8 +120,10 @@ public Connect4(){
             for (int i = 5; i >= 0 && found==false; i--) {
                 if (tab[i][columna]==0) {
                     found=true;
-                    y=i;
-                    x=columna;
+                    setY(i);
+                    setX(columna);
+                    //y=i;
+                    //x=columna;
                     tab[y][x]=2;
                 }
             }
@@ -134,6 +133,7 @@ public Connect4(){
             }
         }
     }
+    
     public void AI(){
         int columna = rd.nextInt(7);
         boolean found=false;
@@ -141,8 +141,10 @@ public Connect4(){
             for (int i = 5; i >= 0 && found==false; i--) {
                 if (tab[i][columna]==0) {
                     found=true;
-                    y=i;
-                    x=columna;
+                    setY(i);
+                    setX(columna);
+                    //y=i;
+                    //x=columna;
                     tab[y][x]=2;
                 }
             }
@@ -158,6 +160,9 @@ public Connect4(){
         for (int i = 0; i < pos.size(); i++) {
             int win = pos.get(i);
             boolean proximity=true;
+            if (win==2||win==6) {
+                cont++;
+            }
             if (win==1) {
                 for (int j = 0; j < 4 &&  proximity==true; j++) {
                     if (mat[y][x]==mat[y-j][x+j]) {
@@ -286,7 +291,10 @@ public Connect4(){
                 }
             }
         }
-         
+        if (cont==2) {
+            rectH-=1;
+        }
+ 
         if (diaN>=4||diaP>=4||rectH>=4||rectV>=4) {
             return true;
         }else{
@@ -341,17 +349,29 @@ public Connect4(){
             }
             JOptionPane.showMessageDialog(null, "Hubo un flip en"+x);
             System.out.println("-------------------");
-            print(tab);
+            print(tab,0,0);
             System.out.println("-------------------");
         }
     }
 
-    public void print(int[][] x) {
+    /*public void print(int[][] x) {
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x[i].length; j++) {
                 System.out.print(" ["+x[i][j]+"] ");
             }
             System.out.println("");
+        }
+    }*/
+    public static void print(int[][] mat, int fila, int col) {
+        if (fila == mat.length) {
+            return;
+        }
+        System.out.print(mat[fila][col] + " ");
+        if (col == mat.length - 1) {
+            System.out.println();
+            print(mat, fila + 1, 0);
+        }else{
+            print(mat, fila, col + 1);
         }
     }
     

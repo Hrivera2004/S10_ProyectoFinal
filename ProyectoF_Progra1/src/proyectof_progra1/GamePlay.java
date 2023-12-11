@@ -4,6 +4,8 @@
  */
 package proyectof_progra1;
 
+import java.awt.Color;
+
 /**
  *
  * @author rolriverav
@@ -14,29 +16,77 @@ public class GamePlay extends javax.swing.JFrame {
     public GamePlay() {
         initComponents();
         
-        int x=game.x;
-        int y=game.y;
-        
-        if (y==5){
+        int x=game.getX();
+        int y=game.getY();
+       if (y==5){
             if (x==0) {
                 if(game.turn%2!=0){
                     //XY.
+                    XY.setBackground(Color.red);
                 }else{
-                    //XY.
+                    //XY
+                    XY.setBackground(Color.yellow);
+                    
                 }
-                XY.setText("O");
             }else if(x==1){
+                if(game.turn%2!=0){
+                    //XY1
+                    XY.setBackground(Color.red);
+                }else{
+                    //XY1
+                    XY.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==2){
+                if(game.turn%2!=0){
+                    //XY2
+                    XY2.setBackground(Color.red);
+                }else{
+                    //XY2
+                    XY2.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==3){
+                if(game.turn%2!=0){
+                    //XY3
+                    XY3.setBackground(Color.red);
+                }else{
+                    //XY3
+                    XY3.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==4){
+                if(game.turn%2!=0){
+                    //XY4
+                    XY4.setBackground(Color.red);
+                }else{
+                    //XY4
+                    XY4.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==5){
+                if(game.turn%2!=0){
+                    //XY5
+                    XY5.setBackground(Color.red);
+                }else{
+                    //XY5
+                    XY5.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==6){
-                
+                if(game.turn%2!=0){
+                    //XY6
+                    XY6.setBackground(Color.red);
+                }else{
+                    //XY6
+                    XY6.setBackground(Color.yellow);
+                    
+                }
             }
         }else if (y==4){
             if (x==0) {
@@ -45,102 +95,340 @@ public class GamePlay extends javax.swing.JFrame {
                 }else{
                     //XY7.
                 }
-                XY7.setText("O");
             }else if(x==1){
+                if(game.turn%2!=0){
+                    //XY8
+                    XY8.setBackground(Color.red);
+                }else{
+                    //XY8
+                    XY8.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==2){
+                if(game.turn%2!=0){
+                    //XY9
+                    XY9.setBackground(Color.red);
+                }else{
+                    //XY9
+                    XY9.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==3){
+                if(game.turn%2!=0){
+                    //XY10
+                    XY10.setBackground(Color.red);
+                }else{
+                    //XY9
+                    XY10.setBackground(Color.yellow);
+                    
+                }
+                XY10.setText("O");
                 
             }else if(x==4){
+                if(game.turn%2!=0){
+                    //XY11.
+                    XY10.setBackground(Color.red);
+                }else{
+                    //XY11
+                    XY11.setBackground(Color.yellow);
+                    
+                }
                 
             }else if(x==5){
-                
+                if(game.turn%2!=0){
+                    //XY12
+                    XY12.setBackground(Color.red);
+                }else{
+                    //XY12
+                    XY12.setBackground(Color.yellow);
+                    
+                }
+                XY12.setText("O");
             }else if(x==6){
-                
+                if(game.turn%2!=0){
+                    //XY13.
+                     XY13.setBackground(Color.red);
+                }else{
+                    //XY13.
+                     XY13.setBackground(Color.red);
+                }
+
             }
         }else if (y==3){
             if (x==0) {
-                if(game.turn%2!=0){
+               if(game.turn%2!=0){
                     //XY14.
+                     XY14.setBackground(Color.red);
                 }else{
-                    //XY14.
+                    //XY13.
+                     XY14.setBackground(Color.red);
                 }
-                XY14.setText("O");
             }else if(x==1){
+                if(game.turn%2!=0){
+                    //XY15
+                     XY15.setBackground(Color.red);
+                }else{
+                    //XY15
+                     XY15.setBackground(Color.red);
+                }
                 
             }else if(x==2){
+                if(game.turn%2!=0){
+                    //XY16
+                     XY16.setBackground(Color.red);
+                }else{
+                    //XY13.
+                     XY16.setBackground(Color.red);
+                }
                 
             }else if(x==3){
+                if(game.turn%2!=0){
+                    //XY17
+                     XY17.setBackground(Color.red);
+                }else{
+                    //XY17
+                     XY17.setBackground(Color.red);
+                }
                 
             }else if(x==4){
+                if(game.turn%2!=0){
+                    //XY18
+                     XY18.setBackground(Color.red);
+                }else{
+                    //XY18
+                     XY18.setBackground(Color.red);
+                }
                 
             }else if(x==5){
+                if(game.turn%2!=0){
+                    //XY19
+                     XY19.setBackground(Color.red);
+                }else{
+                    //XY19.
+                     XY19.setBackground(Color.red);
+                }
+
                 
             }else if(x==6){
+                if(game.turn%2!=0){
+                    //XY20
+                     XY20.setBackground(Color.red);
+                }else{
+                    //XY20.
+                     XY20.setBackground(Color.red);
+                }
+   
                 
             }
         }else if (y==2){
             if (x==0) {
                 if(game.turn%2!=0){
                     //XY21.
+                    XY21.setBackground(Color.red);
                 }else{
                     //XY21.
+                    XY21.setBackground(Color.yellow);
                 }
-                XY21.setText("O");
+ 
             }else if(x==1){
+                if(game.turn%2!=0){
+                    //XY22
+                    XY22.setBackground(Color.red);
+                }else{
+                    //XY22
+                    XY22.setBackground(Color.yellow);
+                }
+  
                 
             }else if(x==2){
+                if(game.turn%2!=0){
+                    //XY23.
+                    XY23.setBackground(Color.red);
+                }else{
+                    //XY23
+                    XY23.setBackground(Color.yellow);
+                }
+   
                 
             }else if(x==3){
+                if(game.turn%2!=0){
+                    //XY24.
+                    XY24.setBackground(Color.red);
+                }else{
+                    //XY24
+                    XY24.setBackground(Color.yellow);
+                }
+  
                 
             }else if(x==4){
+                if(game.turn%2!=0){
+                    //XY25
+                    XY25.setBackground(Color.red);
+                }else{
+                    //XY25
+                    XY25.setBackground(Color.yellow);
+                }
+       
                 
             }else if(x==5){
+                if(game.turn%2!=0){
+                    //XY26
+                    XY26.setBackground(Color.red);
+                }else{
+                    //XY26
+                    XY26.setBackground(Color.yellow);
+                }
+   
                 
             }else if(x==6){
+                if(game.turn%2!=0){
+                    //XY27
+                    XY27.setBackground(Color.red);
+                }else{
+                    //XY27
+                    XY27.setBackground(Color.yellow);
+                }
+
                 
             }
         }else if (y==1){
             if (x==0) {
                 if(game.turn%2!=0){
                     //XY28.
+                     XY28.setBackground(Color.red);
                 }else{
                     //XY28.
+                     XY28.setBackground(Color.red);
                 }
-                XY28.setText("O");
+
             }else if(x==1){
+                 if(game.turn%2!=0){
+                    //XY29
+                     XY29.setBackground(Color.red);
+                }else{
+                    //XY29
+                     XY29.setBackground(Color.red);
+                }
+
                 
             }else if(x==2){
+                 if(game.turn%2!=0){
+                    //XY30
+                     XY30.setBackground(Color.red);
+                }else{
+                    //XY30
+                     XY30.setBackground(Color.red);
+                }
+
                 
             }else if(x==3){
+                 if(game.turn%2!=0){
+                    //XY31
+                     XY31.setBackground(Color.red);
+                }else{
+                    //XY31
+                     XY31.setBackground(Color.red);
+                }
+
                 
             }else if(x==4){
+                 if(game.turn%2!=0){
+                    //XY32
+                     XY32.setBackground(Color.red);
+                }else{
+                    //XY32
+                     XY32.setBackground(Color.red);
+                }
+
                 
             }else if(x==5){
+                 if(game.turn%2!=0){
+                    //XY33
+                     XY33.setBackground(Color.red);
+                }else{
+                    //XY33
+                     XY33.setBackground(Color.red);
+                }
+
                 
             }else if(x==6){
+                 if(game.turn%2!=0){
+                    //XY34
+                     XY34.setBackground(Color.red);
+                }else{
+                    //XY34
+                     XY34.setBackground(Color.red);
+                }
+
                 
             }
         }else if (y==1){
             if (x==0) {
                 if(game.turn%2!=0){
                     //XY35.
+                    XY35.setBackground(Color.red);
                 }else{
                     //XY35.
+                    XY35.setBackground(Color.yellow);
                 }
-                XY35.setText("O");
+
             }else if(x==1){
+                if(game.turn%2!=0){
+                    //XY36
+                    XY36.setBackground(Color.red);
+                }else{
+                    //XY36
+                    XY36.setBackground(Color.yellow);
+                }
+
                 
             }else if(x==2){
+                if(game.turn%2!=0){
+                    //XY37
+                    XY37.setBackground(Color.red);
+                }else{
+                    //XY37
+                    XY37.setBackground(Color.yellow);
+                }
+
                 
             }else if(x==3){
+                if(game.turn%2!=0){
+                    //XY38
+                    XY38.setBackground(Color.red);
+                }else{
+                    //XY38
+                    XY38.setBackground(Color.yellow);
+                }
                 
             }else if(x==4){
+                if(game.turn%2!=0){
+                    //XY39
+                    XY39.setBackground(Color.red);
+                }else{
+                    //XY39
+                    XY39.setBackground(Color.yellow);
+                }
                 
             }else if(x==5){
+                if(game.turn%2!=0){
+                    //XY40
+                    XY40.setBackground(Color.red);
+                }else{
+                    //XY40
+                    XY40.setBackground(Color.yellow);
+                }
                 
             }else if(x==6){
+                if(game.turn%2!=0){
+                    //XY41
+                    XY41.setBackground(Color.red);
+                }else{
+                    //XY41
+                    XY41.setBackground(Color.yellow);
+                }
                 
             }
         }
