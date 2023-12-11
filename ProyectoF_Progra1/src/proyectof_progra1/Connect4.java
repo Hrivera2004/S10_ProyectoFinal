@@ -57,22 +57,6 @@ public Connect4(){
         GUI_Proyecto visual = new GUI_Proyecto();
         visual.setVisible(true);
         turn=0;
-        /*while(turn<42 && campeon==false){ 
-            turn++;
-            play(option);
-            System.out.println("------------------------");
-            flip();
-        }
-        if (campeon==true) {
-            System.out.println("Victoria------------------");
-            if (turn%2!=0) {
-                System.out.println("Jugador 1 gano");
-            }else if(option==0){
-                System.out.println("Jugador 2 gano");
-            }else{
-                System.out.println("AI gano");
-            }
-        }*/
     }
     
     public void play(int option){
@@ -100,7 +84,7 @@ public Connect4(){
                 System.out.println("-----------------");
             }
         }
-        if (turn>=0) {
+        if (turn>=8) {
                 System.out.println("-------------");
                 System.out.println(x+" :x");
                 System.out.println(y+" :y");
