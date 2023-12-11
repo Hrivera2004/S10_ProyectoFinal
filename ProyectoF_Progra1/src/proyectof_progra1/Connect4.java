@@ -50,6 +50,7 @@ public class Connect4 {
         //utilizar get y set para jalar codigo de option
         GUI_Proyecto visual = new GUI_Proyecto();
         visual.setVisible(true);
+        visual.setBounds(500, 10, 511, 377);
         turn=0;
     }
     
@@ -235,7 +236,7 @@ public class Connect4 {
         int rectH= rectH1+rectH2;
 
          
-        if (diaN<4&&diaP<4&&rectH<5) {
+        if (diaN<4&&diaP<4&&rectH<4) {
             int[] rem = {4-diaN,4-diaP,4-rectH};
             int menor=4;
             int posM=0; 
@@ -245,6 +246,9 @@ public class Connect4 {
                     posM=i;
                 }
             }
+            System.out.println(diaP);
+            System.out.println(diaN);
+            System.out.println(rectH);
             System.out.println("----------------");
             if (posM==0) {
                 if (diaN1==0 && mat.length-x>=menor && mat.length-1-y>=menor) {
@@ -294,7 +298,9 @@ public class Connect4 {
         if (cont==2) {
             rectH-=1;
         }
- 
+        System.out.println(diaP);
+        System.out.println(diaN);
+        System.out.println(rectH);
         if (diaN>=4||diaP>=4||rectH>=4||rectV>=4) {
             return true;
         }else{
@@ -307,7 +313,7 @@ public class Connect4 {
         if (mat.length-x>=3 && y>=3) {//diagonal positiva
             pos.add(1);
         }
-        if (mat.length-x>=3) {//recta horizontal positiva
+        if (mat.length-x<=3) {//recta horizontal positiva
             pos.add(2);
         } 
         if (mat.length-x>=3 && mat.length-1-y>=3) {//diagonal inversa negativa 
@@ -367,12 +373,15 @@ public class Connect4 {
             return;
         }
         System.out.print(mat[fila][col] + " ");
-        if (col == mat.length - 1) {
+        
+        if (col == mat.length) {
             System.out.println();
             print(mat, fila + 1, 0);
+            
         }else{
             print(mat, fila, col + 1);
         }
+        
     }
     
     

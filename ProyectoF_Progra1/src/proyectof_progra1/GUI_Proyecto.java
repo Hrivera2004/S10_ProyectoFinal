@@ -425,7 +425,6 @@ public class GUI_Proyecto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setPreferredSize(new java.awt.Dimension(500, 450));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -487,7 +486,7 @@ public class GUI_Proyecto extends javax.swing.JFrame {
         int option = 1;
         jFrame1.setVisible(true);
         this.setVisible(false);
-        jFrame1.setBounds(500, 10, 500, 500);
+        jFrame1.setBounds(500, 10, 470, 470);
         while (game.turn < 42 && game.campeon == false) {
             game.setTurn(game.getTurn() + 1);
             game.play(option);
@@ -499,10 +498,8 @@ public class GUI_Proyecto extends javax.swing.JFrame {
             jFrame1.dispose();
             if (game.turn % 2 != 0) {
                 JOptionPane.showMessageDialog(null, "Jugador 1 a ganado!!");
-            } else if (option == 0) {
+            }else{
                 JOptionPane.showMessageDialog(null, "Jugador 2 a ganado!!");
-            } else {
-                JOptionPane.showMessageDialog(null, "La computadora a ganado!!");
             }
         }
     }//GEN-LAST:event_jButton2MouseClicked
@@ -512,7 +509,7 @@ public class GUI_Proyecto extends javax.swing.JFrame {
         dispose();
         int option = 0;
         jFrame1.setVisible(true);
-        jFrame1.setBounds(500, 10, 500, 500);
+        jFrame1.setBounds(500, 10, 470, 470);
         this.setVisible(false);
         while (game.turn < 42 && game.campeon == false) {
             game.setTurn(game.getTurn() + 1);
@@ -525,9 +522,7 @@ public class GUI_Proyecto extends javax.swing.JFrame {
             jFrame1.dispose();
             if (game.turn % 2 != 0) {
                 JOptionPane.showMessageDialog(null, "Jugador 1 a ganado!!");
-            } else if (option == 0) {
-                JOptionPane.showMessageDialog(null, "Jugador 2 a ganado!!");
-            } else {
+            }else {
                 JOptionPane.showMessageDialog(null, "La computadora a ganado!!");
             }
         }
